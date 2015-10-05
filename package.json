@@ -1,0 +1,24 @@
+{
+  "name": "Electron-Wifi-router",
+  "version": "0.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "electron .",
+    "make":"electron-packager ./dist FreeWifiRouter --platform=win32 --arch=x64 --version=0.33.2 "
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "electron-packager": "^5.1.0",
+    "electron-prebuilt": "^0.33.4",
+    "gulp": "^3.9.0",
+    "gulp-clean": "^0.3.1"
+  },
+  "dependencies": {
+    "angular": "^1.4.7",
+    "angular-animate": "^1.4.7",
+    "angular-aria": "^1.4.7",
+    "angular-material": "^0.11.2"
+  }
+}
