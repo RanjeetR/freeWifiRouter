@@ -1,41 +1,65 @@
 <!DOCTYPE html>
-<html >
-  <head>
-    <meta charset="UTF-8">
-    <title>Free WifiRouter</title>
-    
-    <link rel="stylesheet" type="text/css" href="css/style.css">
-  
-    
- 
-    
+<html ng-app="freeWifiRouter">
+<head lang="en">
+  <meta charset="UTF-8">
+  <title>Free Wifi Router :- Ranjeet R Hange</title>
 
-    
-  </head>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body ng-controller="mainController">
+<script>
+  var remote = require('remote');
+  var Menu = remote.require('menu');
+  var MenuItem = remote.require('menu-item');
 
-  <body>
+  var menu = new Menu();
+  menu.append(new MenuItem({ label: 'About', click: function() { alert("This app is Develope by Ranjeet"); } }));
+  menu.append(new MenuItem({ type: 'separator' }));
+  menu.append(new MenuItem({ label: 'Exit', type: 'checkbox', checked: true }));
 
-    <div class="body"></div>
-		<div class="grad"></div>
-		<div class="header">
-			<div>Free<span>WifiRouter</span></div>
-		</div>
-		<br>
-		<div class="login">
-				<input type="text" placeholder="Enter SSID " name="user"><br>
-				<input type="text" placeholder="password" name="password"><br>
-				<input type="button" value="Create">
-		</div>
+  window.addEventListener('contextmenu', function (e) {
+    e.preventDefault();
+    menu.popup(remote.getCurrentWindow());
+  }, false);
+</script>
+
+<h1>Free Wifi Router  </h1>
+
+<div  class="colorNested">
+
+  <div><input type="text" class="md-input" id="networkname" ng-model="networkname"></div>
+  <div><input type="text" class="md-input" id="password" ng-model="password"></div>
+</div>
 
 
-    <div class="btnGroup">
-    <input type="button" value="Create">
-    <input type="button" value="Create">
-    <input type="button" value="Create">
-    <input type="button" value="Create">
-    </div>
-    
-    
-    
-  </body>
+
+
+
+<div  class="colorRow">
+
+  <div class="leftbtn"><button class="md-primary md-raised md-button md-default-theme flex-md-100 flex" id="subButton" required ng-click="startWifi()">Start</button></div>
+  <div><button class="md-primary md-raised md-button md-default-theme flex-md-100 flex" id="subButton" required ng-click="checkComp()">Stop</button></div>
+  <div><button class="md-primary md-raised md-button md-default-theme flex-md-100 flex"  required ng-click="showConnected()">ShowConnected</button></div>
+</div>
+
+<div id="status"> </div>
+
+<!--
+
+<button class="md-primary md-raised md-button md-default-theme flex-md-100 flex" id="subButton">Check</button>
+<button id="checkStatus">Check Compatibilty</button>
+<button id="stop">Stop</button>
+-->
+
+
+<div class="love">made in india</div>
+
+
+
+
+
+<script src="libs/angular.js"></script>
+<script src="js/app.js"></script>
+<script src="js/controller/mainController.js"></script>
+</body>
 </html>

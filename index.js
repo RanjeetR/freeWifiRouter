@@ -4,7 +4,7 @@ var bw = require("browser-window")
 //var packager = require('electron-packager');
 app.on("ready", function () {
      mainWindow = new bw({
-        width:500,
+        width:600,
         height:400,
         resizable:false
     })

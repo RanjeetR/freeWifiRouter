@@ -1,28 +1,44 @@
 
 (function () {
 
-     freeWifiRouter = angular.module('freeWifiRouter', ['ngMaterial'])
-
-/*
-
-    freeWifiRouter.controller('AppCtrl', ['$scope', '$mdSidenav', function($scope, $mdSidenav){
-        $scope.toggleSidenav = function(menuId) {
-            $mdSidenav(menuId).toggle();
-        };
-
-    }]);
-*/
-
-/*
 
 
-    var btn = document.getElementById("subButton");
-    var btnStatus = document.getElementById("checkStatus");
+
+
+    var start = document.getElementById("start");
+    var CheckStatus = document.getElementById("checkStatus");
+    var stop = document.getElementById("stop");
+    var comptCheck = document.getElementById("compt");
     var div = document.getElementById("status");
     var networkname = document.getElementById("networkname");
     var password = document.getElementById("password");
-    var btnstop = document.getElementById("stop");
-    btn.addEventListener('click', function () {
+
+
+  //Register Events
+    start.addEventListener('click',startHotspot);
+    CheckStatus.addEventListener('click',ShowConnected);
+    stop.addEventListener('click',stopHotspot);
+    comptCheck.addEventListener('click',compatibilityCheck);
+
+
+    //Funtions
+
+     function startHotspot (){
+         alert("comp");
+    }
+     function ShowConnected (){
+         alert("comp");
+    }
+     function stopHotspot (){
+         alert("comp");
+    }
+     function compatibilityCheck (){
+        alert("comp");
+    }
+
+
+
+   /* btn.addEventListener('click', function () {
 
 
         var exec = require('child_process').exec;
