@@ -1,17 +1,22 @@
 body{
 	width: 560px;
 	height: 240px;
-	background-color: aquamarine;
-
+	background-color: #ffffff;
+	overflow-x: hidden;
 }
 .container{
 	width: 400px;
 	display: flex;
 	margin-top: 14%;
 }
+nav{
+	width: 111% !important;
+}
 .loginLabel{
 	margin: 0 auto;
 	color: #fff;
+	color: #26A69A;
+
 	font-family: 'Exo', sans-serif;
 	font-size: 35px;
 	font-weight: 200;
@@ -20,15 +25,14 @@ body{
 	color: blue;
 }
 .loginInput{
-	margin-left: 6%;
-	width: 30%;
+
 }
 .password{
 	margin-top: 10px;
 }
 .btnDiv{
-	margin-left: 18%;
-	width: 376px;
+
+	width: 630px;
 	margin-top: 6%;
 }
 .btnDiv button {
