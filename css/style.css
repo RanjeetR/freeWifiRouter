@@ -15,7 +15,7 @@ nav{
 .loginLabel{
 	margin: 0 auto;
 	color: #fff;
-	color: #26A69A;
+	color: #EE6E73;
 
 	font-family: 'Exo', sans-serif;
 	font-size: 35px;
@@ -48,4 +48,12 @@ nav{
 nav {
 	height: 46px !important;
 	line-height: 46px !important;
+
+
+}
+h6{
+	float: right;
+}
+img{
+	width: 20px;
 }
