@@ -1,9 +1,7 @@
 
 (function () {
 
-
-
-
+    //register exec
 
     var start = document.getElementById("start");
     var CheckStatus = document.getElementById("checkStatus");
@@ -13,23 +11,42 @@
     var networkname = document.getElementById("networkname");
     var password = document.getElementById("password");
 
-    //register exec
     var exec = require('child_process').exec;
-    //stoping hotspot if already created
 
-
-
-  //Register Events
+    //Register Events
     start.addEventListener('click',startHotspot);
     CheckStatus.addEventListener('click',ShowConnected);
     stop.addEventListener('click',stopHotspot);
     comptCheck.addEventListener('click',compatibilityCheck);
 
 
+    try{
+
+        exec('netsh wlan stop hostednetwork', function(error, stdout, stderr) {
+
+
+            console.log('stdout: ' + stdout);
+            console.log('stderr: ' + stderr);
+            console.log("network stopeed");
+            if (error !== null) {
+                console.log('exec error: ' + error);
+            }
+        });
+    }catch (exp){
+        console.log("error occured ...!",exp);
+    }
+
+
+    //stoping hotspot if already created
+
+
+
+
+
     //Funtions
 
      function startHotspot (){
-         setTimeout(function(){
+        try{
              exec('netsh wlan stop hostednetwork', function(error, stdout, stderr) {
 
 
@@ -40,102 +57,88 @@
                      console.log('exec error: ' + error);
                  }
              });
-        },1600);
+        }catch(er){
+            console.log("error ..",er)
+        }
 
         console.log(networkname.value  ,password.value);
 
-         exec('netsh wlan set hostednetwork mode=allow ssid= '+networkname.value+'  key='+password.value+' ', function(error, stdout, stderr) {
-             //console.log('stdout: ' + stdout);
-             //console.log('stderr: ' + stderr);
-             console.log("network starting");
-             console.log('netsh wlan set hostednetwork mode=allow ssid= '+networkname.value+'  key='+password.value+' ');
-             console.log(networkname.value);
+         try {
+             exec('netsh wlan set hostednetwork mode=allow ssid= ' + networkname.value + '  key=' + password.value + ' ', function (error, stdout, stderr) {
+                 //console.log('stdout: ' + stdout);
+                 //console.log('stderr: ' + stderr);
+                 console.log("network starting");
+                 console.log('netsh wlan set hostednetwork mode=allow ssid= ' + networkname.value + '  key=' + password.value + ' ');
+                 console.log(networkname.value);
+                 if (error !== null) {
+                     console.log('exec error: ' + error);
+                 }
+             });
+         }catch(ex){
+             console.log("error ...",ex);
+         }
+
+       try{
+             exec('netsh wlan start hostednetwork ', function(error, stdout, stderr) {
+                 console.log('stdout: ' + stdout);
+                 console.log('stdout: ' + stderr);
+                alert("Hostspot Started");
+                 if (error !== null) {
+                     console.log('exec error: ' + error);
+                 }
+             });
+         }catch(e){
+           console.log("error in starting your hotspot..");
+       }
+     }
+     function ShowConnected (){
+         try{
+             exec('netsh wlan show hostednetwork ', function(error, stdout, stderr) {
+                 alert(stdout);
+                  if (error !== null) {
+                     console.log('exec error: ' + error);
+                 }
+             });
+         }catch(e){
+             console.log("error in starting your hotspot..");
+         }
+    }
+     function stopHotspot (){
+         try{
+
+             exec('netsh wlan stop hostednetwork', function(error, stdout, stderr) {
+
+
+                alert("Hotspot stopped ...");
+                 if (error !== null) {
+                     console.log('exec error: ' + error);
+                 }
+             });
+         }catch (exp){
+             console.log("error occured ...!",exp);
+         }
+
+     }
+     function compatibilityCheck (){
+        try{
+         exec('netsh wlan show drivers', function(error, stdout, stderr) {
+
+             var txt = "Hosted network supported  : Yes";
+             var pattrn = new RegExp(txt);
+             var res = pattrn.test(stdout);
+             alert("Awesome , Your device is supported ...!");
+             console.log('stdout: ' + stdout);
+             console.log('stderr: ' + stderr);
              if (error !== null) {
                  console.log('exec error: ' + error);
              }
          });
 
-
-         setTimeout(function(){
-             exec('netsh wlan start hostednetwork ', function(error, stdout, stderr) {
-                 console.log('stdout: ' + stdout);
-                 console.log('stdout: ' + stderr);
-                 console.log("network started");
-                 if (error !== null) {
-                     console.log('exec error: ' + error);
-                 }
-             });
-         },3000)
+    }catch(ex){
+        console.log("unable to check status...");
+        }
      }
-     function ShowConnected (){
-         alert("comp");
-    }
-     function stopHotspot (){
-         alert("comp");
-    }
-     function compatibilityCheck (){
-        alert("comp");
-    }
 
 
-
-   /* btn.addEventListener('click', function () {
-
-
-        var exec = require('child_process').exec;
-        exec('netsh wlan set hostednetwork mode=allow ssid= '+networkname.value+'  key='+password.value+' ', function(error, stdout, stderr) {
-            //console.log('stdout: ' + stdout);
-            //console.log('stderr: ' + stderr);
-            console.log('netsh wlan set hostednetwork mode=allow ssid= '+networkname.value+'  key='+password.value+' ');
-            console.log(networkname.value);
-            if (error !== null) {
-                console.log('exec error: ' + error);
-            }
-        });
-        exec('netsh wlan start hostednetwork ', function(error, stdout, stderr) {
-            console.log('stdout: ' + stdout);
-            console.log('stdout: ' + stderr);
-            if (error !== null) {
-                console.log('exec error: ' + error);
-            }
-        });
-
-
-    });
-    btnStatus.addEventListener('click', function () {
-
-
-        var exec = require('child_process').exec;
-        exec('netsh wlan show drivers', function(error, stdout, stderr) {
-
-            var txt = "Hosted network supported  : Yes";
-            var pattrn = new RegExp(txt);
-            var res = pattrn.test(stdout);
-            alert(res);
-            console.log('stdout: ' + stdout);
-            console.log('stderr: ' + stderr);
-            if (error !== null) {
-                console.log('exec error: ' + error);
-            }
-        });
-
-
-    });
-
-    btnstop.addEventListener("click",function(){
-        var exec = require('child_process').exec;
-        exec('netsh wlan stop hostednetwork', function(error, stdout, stderr) {
-
-
-            console.log('stdout: ' + stdout);
-            console.log('stderr: ' + stderr);
-            if (error !== null) {
-                console.log('exec error: ' + error);
-            }
-        });
-
-
-    });
-*/
 
 })();

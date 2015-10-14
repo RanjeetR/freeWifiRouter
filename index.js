@@ -6,7 +6,8 @@ app.on("ready", function () {
      mainWindow = new bw({
         width:640,
         height:340,
-        resizable:false
+        resizable:false,
+         icon:"asset/wireless_tower_2.png"
     })
     mainWindow.loadUrl("file://"+__dirname+"/index.html");
   //  mainWindow.setMenu(null);
