@@ -59,6 +59,7 @@ app.on("ready", function () {
         resizable:false
     })
     mainWindow.loadUrl("file://"+__dirname+"/index.html");
+    });
 ```
 Create index.html containing some message or just Hello World ! 
 after hit following command :- 
