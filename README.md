@@ -20,6 +20,20 @@ Following are the some apps people have built on Electron .
 * Playback — Experimental video player.
 * ScreenCat — WebRTC screensharing.
 * Geojsonapp — Preview geojson files.
+
 # Getting Started
+ The entry point of Electron app  is a JavaScript script. Instead of providing a URL directly,
+We can  manually create a browser window and load an HTML file using the API.  We can Close application by listening to window event .
+Code to Create Browser window :- 
+```sh
+var browser_window = require("browser-window")
+app.on("ready", function () {
+     mainWindow = new browser_window({
+        width:640,
+        height:340,
+        resizable:false
+    })
+    mainWindow.loadUrl("file://"+__dirname+"/index.html");
+```
 
 
