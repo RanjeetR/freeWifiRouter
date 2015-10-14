@@ -45,7 +45,7 @@ npm init
 ```
 ```sh
 
-npm install electron-prebuild --save-dev
+npm install electron-prebuilt --save-dev
 
 ```
 Create index.js file and add following code :-
