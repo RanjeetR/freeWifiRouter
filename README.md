@@ -72,10 +72,19 @@ electron .
 We will be focusing on creating package for windows 32x and 64x .
 
 #Free Wifi Router 
+ ### Enter SSID ( Hotspot Name) & password .After clicking start , your hotspot will be ready to use .
+ 
 ![alt tag](https://github.com/RanjeetR/freeWifiRouter/blob/master/images_git/one.jpg)
 
+### Hotspot started .
 ![alt tag](https://github.com/RanjeetR/freeWifiRouter/blob/master/images_git/two.jpg)
 
+### You Can check weither your system is compatible with this app or not . if no then you can not use this app .
 ![alt tag](https://github.com/RanjeetR/freeWifiRouter/blob/master/images_git/three.jpg)
 
+### We can see how many devices are connected to Hotspot also we can see unique id of mobile devices .
+
+![alt tag](https://github.com/RanjeetR/freeWifiRouter/blob/master/images_git/five.jpg)
+
+### By 
 ![alt tag](https://github.com/RanjeetR/freeWifiRouter/blob/master/images_git/four.jpg)
