@@ -67,3 +67,7 @@ after hit following command :-
 electron .
 
 ```
+
+# Packaging App 
+We will be focusing on creating package for windows 32x and 64x .
+
