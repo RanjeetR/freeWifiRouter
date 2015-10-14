@@ -71,8 +71,9 @@ electron .
 # Packaging App 
 We will be focusing on creating package for windows 32x and 64x .
 
-#Free Wifi Router 
- ### Enter SSID ( Hotspot Name) & password .After clicking start , your hotspot will be ready to use .
+# Free Wifi Router .
+
+### Enter SSID ( Hotspot Name) & password .After clicking start , your hotspot will be ready to use .
  
 ![alt tag](https://github.com/RanjeetR/freeWifiRouter/blob/master/images_git/one.jpg)
 
