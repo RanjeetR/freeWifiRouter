@@ -22,7 +22,7 @@ Following are  some apps people have built on Electron .
 * Geojsonapp — Preview geojson files.
 
 # Getting Started
- The entry point of Electron app  is a JavaScript script. Instead of providing a URL directly,
+ The entry point of Electron app  is a JavaScript . Instead of providing a URL directly,
 We can  manually create a browser window and load an HTML file using the API.  We can Close application by listening to window event .
 Code to Create Browser window :- 
 ```sh
