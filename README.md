@@ -71,3 +71,11 @@ electron .
 # Packaging App 
 We will be focusing on creating package for windows 32x and 64x .
 
+#Free Wifi Router 
+![alt tag](https://github.com/RanjeetR/freeWifiRouter/blob/master/images_git/one.jpg)
+
+![alt tag](https://github.com/RanjeetR/freeWifiRouter/blob/master/images_git/two.jpg)
+
+![alt tag](https://github.com/RanjeetR/freeWifiRouter/blob/master/images_git/three.jpg)
+
+![alt tag](https://github.com/RanjeetR/freeWifiRouter/blob/master/images_git/four.jpg)
