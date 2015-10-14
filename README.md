@@ -36,4 +36,33 @@ app.on("ready", function () {
     mainWindow.loadUrl("file://"+__dirname+"/index.html");
 ```
 
+# Creating Simple App
+Create Package.json file this will contain all dependencies .
+```sh
 
+npm init
+
+```
+```sh
+
+npm install electron-prebuild --save-dev
+
+```
+Create index.js file and add following code :-
+```sh
+var app = require("app");
+var browser_window = require("browser-window")
+app.on("ready", function () {
+     mainWindow = new browser_window({
+        width:640,
+        height:340,
+        resizable:false
+    })
+    mainWindow.loadUrl("file://"+__dirname+"/index.html");
+```
+Create index.html containing some message or just Hello World ! 
+after hit following command :- 
+```sh
+electron .
+
+```
