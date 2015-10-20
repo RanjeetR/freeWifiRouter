@@ -5,11 +5,11 @@ var bw = require("browser-window")
 app.on("ready", function () {
      mainWindow = new bw({
         width:640,
-        height:340,
+        height:440,
         resizable:false,
          icon:"asset/wireless_tower_2.png"
     })
     mainWindow.loadUrl("file://"+__dirname+"/index.html");
-  //  mainWindow.setMenu(null);
+     //  mainWindow.setMenu(null);
 
 })
