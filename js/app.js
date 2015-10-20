@@ -87,8 +87,6 @@ function restartHotspot(){
 }
 
     function viewPassword(){
-        alert("some")
-
         try{
             exec('  netsh wlan show hostednetwork setting=security', function(error, stdout, stderr) {
 
